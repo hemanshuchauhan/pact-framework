@@ -1,0 +1,36 @@
+{
+    "provider": {
+        "name": "ProviderApi"
+    },
+    "consumer": {
+        "name": "PostAddressClientNoResponse"
+    },
+    "interactions": [
+        {
+            "description": "A request for address for post code IG27XX using worg request",
+            "request": {
+                "method": "GET",
+                "path": "/get-address1/IG27XX"
+            },
+            "response": {
+                "status": 404,
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "404 response for wrong status"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}

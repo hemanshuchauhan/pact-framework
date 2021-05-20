@@ -1,0 +1,51 @@
+{
+    "provider": {
+        "name": "ProviderApi"
+    },
+    "consumer": {
+        "name": "PostAddressClientFailResponse"
+    },
+    "interactions": [
+        {
+            "description": "A request for address for post code IG27XX",
+            "request": {
+                "method": "GET",
+                "path": "/get-address1/IG27XX"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "address": "Flat 60 Regal House London"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.address": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Get Address for Post Code IG27XX"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}

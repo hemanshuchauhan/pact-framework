@@ -1,0 +1,51 @@
+{
+    "provider": {
+        "name": "ProviderApi"
+    },
+    "consumer": {
+        "name": "PostAddressClient"
+    },
+    "interactions": [
+        {
+            "description": "A request for address for post code IG27JY",
+            "request": {
+                "method": "GET",
+                "path": "/get-address/IG27JY"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "address": "Flat 56 Regal House London"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.address": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Get Address for Post Code IG27JY"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}

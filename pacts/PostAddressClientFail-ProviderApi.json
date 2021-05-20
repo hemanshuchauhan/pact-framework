@@ -1,0 +1,39 @@
+{
+    "provider": {
+        "name": "ProviderApi"
+    },
+    "consumer": {
+        "name": "PostAddressClientFail"
+    },
+    "interactions": [
+        {
+            "description": "A request for address for post code IG27MN",
+            "request": {
+                "method": "GET",
+                "path": "/get-address/IG27MN"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "address": "Flat 58 Regal House London"
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Get Address for Post Code IG27MN"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}
